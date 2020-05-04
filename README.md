@@ -1,7 +1,7 @@
 # Getting-Mean-Work-Along
 My personal log of progress on the book "Getting Mean" by Simon Holmes
 
-------
+Here's the Heroku URL so you can see the live site as well : https://stark-falls-30670.herokuapp.com/
 
 # Chapter Progress
 - **Chapter 1 - Complete**
