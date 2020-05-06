@@ -2,6 +2,8 @@
 
 My personal log of progress on the book "Getting Mean" by Simon Holmes
 
+Along with knowledge of the MEAN stack, I am also learning how to use Heroku and the Google Static Map API
+
 Here's the Heroku URL so you can see the live site as well : https://stark-falls-30670.herokuapp.com/
 
 # Chapter Progress
