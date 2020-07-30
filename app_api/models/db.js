@@ -1,9 +1,9 @@
 require("./locations");
 var mongoose = require("mongoose");
 var gracefulShutdown;
-var dbURI = "mongodb://localhost.Loc8r";
+var dbURI = "mongodb://localhost:27017.Loc8r";
 if (process.env.NODE_ENV === "production") {
-  process.env.MONGOLAB_URI;
+  dbURI = process.env.MONGOLAB_URI;
 }
 
 //Depreciation Warnings -- UnifiedTopology
