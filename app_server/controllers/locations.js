@@ -1,4 +1,12 @@
 /* GET 'home' page */
+var request = require('request');
+var apiOptions = {
+  server: "http://localhost:3000"
+};
+if(process.env.NODE_ENV === 'production') {
+  apiOptions.server = "https://stark-falls-30670.herokuapp.com";
+}
+
 module.exports.homelist = function (req, res) {
   res.render("locations-list", {
     title: "Loc8r - find a place to work with wifi",
