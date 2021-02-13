@@ -12,7 +12,7 @@ if(process.env.NODE_ENV === 'production') {
 //body
 //querystring
 
-var renderHomepage = function (req, res, responseBody) {
+var renderHomepage = (req, res, responseBody) => {
   res.render("locations-list", {
     title: "Loc8r - find a place to work with wifi",
     pageHeader: {
@@ -29,8 +29,8 @@ module.exports.homelist = function (req, res) {
   var requestOptions, path;
   path = '/api/locations';
   requestOptions = {
-    url : apiOptions.server + path,
-    method : "GET",
+    url : `${apiOptions.server}${path}`,
+    method : 'GET',
     json : {},
     qs : {
       lng : -0.7992599,
@@ -40,7 +40,7 @@ module.exports.homelist = function (req, res) {
   };
   request(
     requestOptions,
-    function(err, response, body) {
+    (err, response, body) => {
       renderHomepage(req, res, body);
     }
   );
