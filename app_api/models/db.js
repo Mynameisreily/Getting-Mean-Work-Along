@@ -1,52 +1,61 @@
 require("./locations");
-var mongoose = require("mongoose");
-var gracefulShutdown;
-var dbURI = "mongodb://localhost:27017.Loc8r";
+var mongoose = require('mongoose');
+var readLine = require('readLine');
+
+var dbURL = "mongodb://localhost:27017.Loc8r";
 if (process.env.NODE_ENV === "production") {
   dbURI = process.env.MONGOLAB_URI;
 }
 
-//Depreciation Warnings -- UnifiedTopology
-mongoose.set("useUnifiedTopology", true);
+const connect = () => {
+  setTimeout(() => mongoose.connect(dbURL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}), 1000);
+}
 
-//Connection and Responses && Depreciation warning URL Parser
-mongoose.connect(dbURI, { useNewUrlParser: true });
+mongoose.connection.on()
 
-mongoose.connection.on("connected", function () {
-  console.log("Mongoose connected to " + dbURI);
+mongoose.connection.on('connected', () => {
+  console.log('connected');
 });
 
-mongoose.connection.on("error", function (err) {
-  console.log("Mongoose connection error: " + err);
+mongoose.connection.on('error', err => {
+  console.log('error: ' + err);
 });
 
-mongoose.connection.on("disconnected", function () {
-  console.log("Mongoose disconnected");
+mongoose.connection.on('disconnected', () => {
+  console.log('disconnected');
 });
 
-//Shutdown Function
-gracefulShutdown = function (msg, callback) {
-  mongoose.connection.close(function () {
-    console.log("Mongoose disconnected through " + msg);
+if(process.platform === 'win32') {
+  const rl = readLine.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  rl.on('SIGINT', () => {
+    process.emit("SIGINT");
+  });
+}
+
+const gracefulShutdown = (msg, callback) => {
+  mongoose.connection.close( () => {
+    console.log(`Mongoose disconnected through ${msg}`);
     callback();
   });
 };
 
-//Disconnection Listeners
-process.once("SIGUSR2", function () {
-  gracefulShutdown("nodemon restart", function () {
-    process.kill(process.pid, "SIGUSR2");
+process.once('SIGUSR2', () => {
+  gracefulShutdown('nodemon restart', () => {
+    process.kill(process.pid, 'SIGUSR2');
   });
 });
-
-process.on("SIGINT", function () {
-  gracefulShutdown("app termination", function () {
+process.on('SIGINT', () => {
+  gracefulShutdown('app termination', () => {
+    process.exit(0);
+  });
+});
+process.on('SIGTERM', () => {
+  gracefulShutdown('Heroku app shutdown', () => {
     process.exit(0);
   });
 });
 
-process.on("SIGTERM", function () {
-  gracefulShutdown("Heroku app shutdown", function () {
-    process.exit(0);
-  });
-});
+connect();

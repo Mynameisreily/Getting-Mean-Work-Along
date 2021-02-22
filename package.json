@@ -10,15 +10,15 @@
     "npm": "~6.13.6"
   },
   "dependencies": {
+    "body-parser": "~1.19.0",
     "cookie-parser": "~1.4.5",
     "debug": "~4.1.1",
     "express": "~4.17.1",
     "http-errors": "~1.7.3",
-    "jade": "~1.11.0",
-    "jquery": "^3.5.0",
-    "mapbox-gl": "^1.10.0",
-    "mongoose": "^5.9.16",
+    "mongoose": "^5.11.17",
     "morgan": "~1.10.0",
-    "request": "^2.88.2"
+    "pug": "^3.0.0",
+    "request": "^2.88.2",
+    "serve-favicon": "~2.5.0"
   }
 }
