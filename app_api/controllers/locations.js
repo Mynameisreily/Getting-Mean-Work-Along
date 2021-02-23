@@ -96,6 +96,7 @@ const locationsCreate = (req, res) => {
 };
 
 const locationsReadOne = (req, res) => {
+  console.log(req.params.locationId);
   Loc
     .findById(req.params.locationId)
     .exec((err, location) => {
