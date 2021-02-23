@@ -28,9 +28,9 @@ const locationsListByDistance = async (req, res) => {
             near,
             ...geoOptions
           }
-        }
-      ],
-      {$limit: 10}
+        },
+        {$limit: 10}
+      ]
     );
     console.log(results);
     const locations = results.map(result => {
