@@ -5,6 +5,7 @@ const apiOptions = {
 if(process.env.NODE_ENV === 'production') {
   apiOptions.server = 'https://stark-falls-30670.herokuapp.com';
 }
+app.locals.env = process.env;
 
 const formatDistance = (distance) => {
   let thisDistance = 0;
