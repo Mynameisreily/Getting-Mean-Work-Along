@@ -13,8 +13,8 @@ Here's the Heroku URL so you can see the live site as well : https://stark-falls
 - **Chapter 3 - Complete**
 - **Chapter 4 - Complete**
 - **Chapter 5 - Complete**
-- Chapter 6
-- Chapter 7
+- **Chapter 6 - Complete**
+- **Chapter 7 - Complete**
 - Chapter 8
 - Chapter 9
 - Chapter 10
