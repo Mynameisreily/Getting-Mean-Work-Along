@@ -122,6 +122,7 @@ const getLocationInfo = (req, res, callback) => {
         }
         callback(req, res, data);
       } else {
+        console.log(res);
         showError(req, res, statusCode);
       }
     }
