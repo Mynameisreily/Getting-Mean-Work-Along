@@ -28,7 +28,7 @@ const showError = (req, res, status) => {
     title = `${status}, something's gone wrong`;
     content = 'Something, somewhere, has gone just a little bit wrong.';
   }
-  res.stauts(status);
+  res.status(status);
   res.render('generic-text', {
     title,
     content
