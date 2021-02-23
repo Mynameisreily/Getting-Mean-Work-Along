@@ -21,15 +21,17 @@ const locationsListByDistance = async (req, res) => {
       .json({ "message": "lng and lat query paramaters are required" });
   }
   try {
-    const results = await Loc.aggregate([
-      {
-        $geoNear: {
-          near,
-          ...geoOptions
-        },
-        $limit: 10
-      }
-    ]);
+    const results = await Loc.aggregate(
+      [
+        {
+          $geoNear: {
+            near,
+            ...geoOptions
+          }
+        }
+      ],
+      {$limit: 10}
+    );
     console.log(results);
     const locations = results.map(result => {
       return {
