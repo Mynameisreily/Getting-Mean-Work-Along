@@ -104,6 +104,7 @@ const locationsReadOne = (req, res) => {
           .status(404)
           .json({"message": "locationid not found"});
       } else if (err) {
+        console.log(err);
         return res
           .status(404)
           .json(err);
