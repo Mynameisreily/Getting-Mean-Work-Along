@@ -106,6 +106,7 @@ const renderDetailPage = (req, res, location) => {
 
 const getLocationInfo = (req, res, callback) => {
   const path = `/api/locations/${req.params.locationid}`;
+  console.log(path);
   const requestOptions = {
     url: `${apiOptions.server}${path}`,
     method: 'GET',
