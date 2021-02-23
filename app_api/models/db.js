@@ -1,10 +1,10 @@
-require("./locations");
+require('./locations');
 var mongoose = require('mongoose');
 var readLine = require('readline');
 
-var dbURL = "mongodb://localhost:27017.Loc8r";
-if (process.env.NODE_ENV === "production") {
-  dbURI = process.env.MONGOLAB_URI;
+var dbURL = 'mongodb://localhost:27017.Loc8r';
+if (process.env.NODE_ENV === 'production') {
+  dbURL = process.env.MONGOLAB_URI;
 }
 
 const connect = () => {
