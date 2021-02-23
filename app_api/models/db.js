@@ -1,6 +1,6 @@
 require("./locations");
 var mongoose = require('mongoose');
-var readLine = require('readLine');
+var readLine = require('readline');
 
 var dbURL = "mongodb://localhost:27017.Loc8r";
 if (process.env.NODE_ENV === "production") {
