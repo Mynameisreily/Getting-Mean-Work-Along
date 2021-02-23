@@ -41,7 +41,7 @@ const renderHomepage = (req, res, responseBody) => {
     message = 'API lookup error';
     responseBody = [];
   } else {
-    if(!responseBody.lenth) {
+    if(!responseBody.length) {
       message = 'No places found nearby';
     }
   }
