@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Loc = mongoose.model('Location');
-app.locals.env = process.env;
 
 const locationsListByDistance = async (req, res) => {
   const lng = parseFloat(req.query.lng);

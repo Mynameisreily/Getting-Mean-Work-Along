@@ -5,7 +5,6 @@ const apiOptions = {
 if(process.env.NODE_ENV === 'production') {
   apiOptions.server = 'https://stark-falls-30670.herokuapp.com';
 }
-app.locals.env = process.env;
 
 const formatDistance = (distance) => {
   let thisDistance = 0;
@@ -100,7 +99,7 @@ const renderDetailPage = (req, res, location) => {
         context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
         callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
       },
-      location
+      location,
     }
   );
 };
