@@ -1,3 +1,4 @@
+//Comment
 require('./locations');
 var mongoose = require('mongoose');
 var readLine = require('readline');
