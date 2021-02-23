@@ -11,8 +11,6 @@ const connect = () => {
   setTimeout(() => mongoose.connect(dbURL, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}), 1000);
 }
 
-mongoose.connection.on()
-
 mongoose.connection.on('connected', () => {
   console.log('connected');
 });
