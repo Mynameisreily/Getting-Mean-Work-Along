@@ -29,6 +29,7 @@ const locationsListByDistance = async (req, res) => {
         }
       }
     ]);
+    console.log(results);
     const locations = results.map(result => {
       return {
         _id: result._id,
@@ -39,10 +40,12 @@ const locationsListByDistance = async (req, res) => {
         distance: `${result.distance.calculated.toFixed()}`
       }
     });
+
     res
       .status(200)
       .json(locations);
   } catch (err) {
+    console.log(err);
     res
       .status(404)
       .json(err);
