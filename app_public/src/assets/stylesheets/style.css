@@ -64,6 +64,9 @@ legend {
 .badge-default, .btn-primary {
   background-color: #ad1d28;
   border-color: #911821;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 h4 a, h4 a:hover {
