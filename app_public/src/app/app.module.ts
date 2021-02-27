@@ -7,11 +7,16 @@ import { HomeListComponent } from './home-list/home-list.component';
 import { DistancePipe } from './distance.pipe';
 import { FrameworkComponent } from './framework/framework.component';
 import { AboutComponent } from './about/about.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HtmlLineBreaksPipe } from './html-line-breaks.pipe';
+import { RatingStarsComponent } from './rating-stars/rating-stars.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: HomeListComponent
+    component: HomepageComponent
   },
   {
     path: 'about',
@@ -24,7 +29,12 @@ const appRoutes: Routes = [
     HomeListComponent,
     DistancePipe,
     FrameworkComponent,
-    AboutComponent
+    AboutComponent,
+    HomepageComponent,
+    PageHeaderComponent,
+    SidebarComponent,
+    HtmlLineBreaksPipe,
+    RatingStarsComponent
   ],
   imports: [
     BrowserModule,
